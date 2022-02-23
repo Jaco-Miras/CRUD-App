@@ -1,0 +1,16 @@
+{% extends 'book/home.html' %} {% block content %}
+<center>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class="w-50 table table-light" style="border-radius: 10px">
+      {% for field in add_form %}
+      <tr>
+        <th>{{field.label}}</th>
+        <td>{{field}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <button type="submit" class="btn btn-lg btn-success md-5">Add</button>
+  </form>
+</center>
+{% endblock %}
